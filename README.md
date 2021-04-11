@@ -6,6 +6,9 @@ sudo apt install ubuntu-desktop
 sudo apt install tightvncserver
 sudo apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
 
+sudo apt install nodejs npm
+sudo snap --classic vscode
+
 vncserver :1
 vim ~/.vnc/xstartup
 ```

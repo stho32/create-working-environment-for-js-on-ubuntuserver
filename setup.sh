@@ -13,4 +13,4 @@ useradd developer -d /home/developer -m ;
 echo -e "RH02JGUGIgQbwQViMW\nRH02JGUGIgQbwQViMW" | passwd developer
 usermod --shell /bin/bash developer
 echo "the account is setup"
-
+usermod -aG sudo developer

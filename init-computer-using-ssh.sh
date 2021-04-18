@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh root@136.244.84.188 'bash -s' < setup.sh
+ssh root@199.247.26.255 'bash -s' < setup.sh

@@ -1,31 +1,30 @@
 #!/bin/bash
 
+## Updating the server and installing xubuntu GUI
 apt update
 apt upgrade -y
 export DEBIAN_FRONTEND=noninteractive
 apt-get install xubuntu-core -y
 
+## Installing VNC Server
 apt-get install x2goserver x2goserver-xsession -y
 
-# install nvm
-#curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-#nvm install 14.15.3
+curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+sudo apt-get install -y nodejs
 
-#curl -sL https://deb.nodesource.com/setup_15.x | sudo bash -
-# sudo apt-get install -y nodejs
-# node -v
-
-apt install nodejs npm -y
-# dependency for nexe...
-#apt-get install python2 -y
-
-# dev environment
+## Dev Environment
 snap install --classic code
 
+## Setting up the new user and generating random password
 
-
+clear
+pass="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c16)"
+echo "[INFO] Generating random password"
 useradd developer -d /home/developer -m ;
-echo -e "RH02JGUGIgQbwQViMW\nRH02JGUGIgQbwQViMW" | passwd developer
+echo -e "$pass\n$pass" | passwd developer
 usermod --shell /bin/bash developer
+echo "############################################"
 echo "the account is setup"
+echo "Your new Password for developer is : $pass"
+echo "############################################"
 usermod -aG sudo developer

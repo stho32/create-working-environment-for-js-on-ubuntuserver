@@ -7,7 +7,7 @@ apt-get install xubuntu-core -y
 apt-get install x2goserver x2goserver-xsession -y
 
 apt install nodejs npm -y
-snap install --classic code -y
+snap install --classic code
 
 useradd developer -d /home/developer -m ;
 echo -e "RH02JGUGIgQbwQViMW\nRH02JGUGIgQbwQViMW" | passwd developer

@@ -1,34 +1,30 @@
 #!/bin/bash
 
+## Updating the server and installing xubuntu GUI
 apt update
-apt-get upgrade
+apt upgrade -y
 export DEBIAN_FRONTEND=noninteractive
 apt-get install xubuntu-core -y
 
+## Installing VNC Server
 apt-get install x2goserver x2goserver-xsession -y
 
+curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+sudo apt-get install -y nodejs
+
+## Dev Environment
 snap install --classic code
-snap install --classic dotnet-sdk
-snap install rider --classic
 
+## Setting up the new user and generating random password
 
-# teamviewer
-cd /tmp
-wget https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
-apt-key add TeamViewer2017.asc
-sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/sources.list.d/teamviewer.list'
-apt update
-#apt install teamviewer -y #has interactive question ... 
-#firewall port for teamviewer
-ufw allow 5938
-# => does not work right now
-
-# user login
+clear
+pass="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c16)"
+echo "[INFO] Generating random password"
 useradd developer -d /home/developer -m ;
-echo -e "RH02JGUGIgQbwQViMW\nRH02JGUGIgQbwQViMW" | passwd developer
+echo -e "$pass\n$pass" | passwd developer
 usermod --shell /bin/bash developer
+echo "############################################"
 echo "the account is setup"
+echo "Your new Password for developer is : $pass"
+echo "############################################"
 usermod -aG sudo developer
-
-#echo 'export DOTNET_ROOT="/snap/dotnet-sdk/current"' >> "/home/developer/.bashrc"
-

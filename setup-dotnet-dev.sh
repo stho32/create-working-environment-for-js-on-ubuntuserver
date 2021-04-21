@@ -31,4 +31,3 @@ echo "the account is setup"
 usermod -aG sudo developer
 
 #echo 'export DOTNET_ROOT="/snap/dotnet-sdk/current"' >> "/home/developer/.bashrc"
-

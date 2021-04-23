@@ -8,7 +8,7 @@ apt-get install xubuntu-core -y
 
 ## Installing x2go Server and Firefox
 apt-get install x2goserver x2goserver-xsession -y
-apt-get install firefox
+apt-get install firefox -y
 
 ## Dev Environment
 curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -

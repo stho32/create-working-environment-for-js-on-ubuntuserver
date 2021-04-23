@@ -14,7 +14,7 @@ apt-get install firefox -y
 curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 sudo apt-get install -y nodejs
 snap install --classic code
-apt-get install gcc g++ make 
+apt-get install gcc g++ make -y
 
 
 ## Setting up the new user and generating random password

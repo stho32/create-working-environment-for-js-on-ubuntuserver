@@ -6,14 +6,16 @@ apt upgrade -y
 export DEBIAN_FRONTEND=noninteractive
 apt-get install xubuntu-core -y
 
-## Installing VNC Server
+## Installing x2go Server and Firefox
 apt-get install x2goserver x2goserver-xsession -y
-
-curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-sudo apt-get install -y nodejs
+apt-get install firefox -y
 
 ## Dev Environment
+curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+sudo apt-get install -y nodejs
 snap install --classic code
+apt-get install gcc g++ make -y
+
 
 ## Setting up the new user and generating random password
 
